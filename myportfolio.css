@@ -528,50 +528,54 @@ nav ul li a:hover{
 }
 
 /* ================= PORTFOLIO ================= */
-/* ================= PORTFOLIO ================= */
+/* ================= PORTFOLIO SECTION ================= */
 
 #portfolio {
   padding: 80px 0;
   background: #000;
 }
 
-/* TITLE */
+/* ===== TITLE ===== */
 .section-header {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 60px;
 }
 
 .section-header h2 {
   font-size: 42px;
   color: #fff;
-  display: inline-block;
+  font-weight: 600;
   position: relative;
+  display: inline-block;
 }
 
+/* ONLY "WORK" ORANGE */
 .section-header h2 span {
   color: #ff5733;
 }
 
+/* UNDERLINE GLOW */
 .section-header h2::after {
   content: "";
-  width: 80px;
+  width: 90px;
   height: 4px;
   background: linear-gradient(to right, #ff5733, #ff2e63);
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -12px;
+  bottom: -14px;
   border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 87, 51, 0.6);
 }
 
-/* 🔥 MASONRY GRID */
+/* ===== MASONRY GRID ===== */
 .portfolio-grid {
   column-count: 3;
   column-gap: 25px;
   padding: 0 10%;
 }
 
-/* ITEMS */
+/* ===== ITEMS ===== */
 .portfolio-item {
   break-inside: avoid;
   margin-bottom: 25px;
@@ -579,6 +583,7 @@ nav ul li a:hover{
   overflow: hidden;
   background: #111;
   position: relative;
+  transition: transform 0.3s ease;
 }
 
 /* IMAGE */
@@ -589,28 +594,33 @@ nav ul li a:hover{
   transition: transform 0.4s ease;
 }
 
-/* HOVER */
+/* HOVER ZOOM */
 .portfolio-item:hover img {
   transform: scale(1.05);
 }
 
-/* 🔥 SUBTLE GLOW ON HOVER */
+/* SUBTLE GLOW EFFECT */
 .portfolio-item::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: 16px;
-  background: linear-gradient(to top, rgba(255,87,51,0.2), transparent);
+  background: linear-gradient(to top, rgba(255,87,51,0.25), transparent);
   opacity: 0;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .portfolio-item:hover::after {
   opacity: 1;
 }
 
-/* RESPONSIVE */
-@media (max-width: 992px) {
+/* OPTIONAL: VERTICAL CONTROL (not required but helpful) */
+.portfolio-item.vertical img {
+  height: auto;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
   .portfolio-grid {
     column-count: 2;
   }
@@ -619,6 +629,11 @@ nav ul li a:hover{
 @media (max-width: 600px) {
   .portfolio-grid {
     column-count: 1;
+    padding: 0 20px;
+  }
+
+  .section-header h2 {
+    font-size: 32px;
   }
 }
 /* ================= RESPONSIVE ================= */
