@@ -550,9 +550,11 @@ nav ul li a:hover{
   transition: transform 0.4s ease;
 }
 
-/* FIX HEIGHT */
 .portfolio-item {
-  height: 220px;
+  aspect-ratio: 16 / 9;
+}
+.tall {
+  aspect-ratio: 3 / 4;
 }
 
 /* HOVER EFFECT */
