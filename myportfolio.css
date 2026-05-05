@@ -280,6 +280,24 @@ nav ul li a:hover{
 /* RIGHT IMAGE */
 .hero-image {
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* REMOVE ANY BACKGROUND HERE */
+.hero-image {
+  background: none !important;
+}
+
+/* IMAGE ONLY */
+.hero-image img {
+  width: 320px;
+  max-width: 100%;
+  border-radius: 20px;
+  display: block;
+  position: relative;
+  z-index: 2;
 }
 
 /* IMAGE STYLE */
