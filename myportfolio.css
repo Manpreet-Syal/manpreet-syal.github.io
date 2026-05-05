@@ -528,89 +528,45 @@ nav ul li a:hover{
 }
 
 /* ================= PORTFOLIO ================= */
-.section-header {
-  padding: 80px 10% 30px;
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  padding: 40px 10%;
 }
 
-.section-header h2 {
-  font-size: 42px;
-  color: #fff;
+.portfolio-item {
   position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #111;
 }
 
-.section-header h2 span {
-  color: #ff5733;
+.portfolio-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* 🔥 IMPORTANT */
+  display: block;
+  transition: transform 0.4s ease;
 }
 
-/* underline glow */
-.section-header h2::after {
-  content: "";
-  width: 60px;
-  height: 3px;
-  background: linear-gradient(to right, #ff5733, #ff2e63);
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-}
-.portfolio h2{
-  font-size:40px;
-  margin-bottom:40px;
-}
-
-.portfolio span{
-  color:#ff5e3a;
-}
-
-/* GRID */
-.portfolio-row{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-  margin-bottom:30px;
-}
-
-/* LANDSCAPE (TOP 3) */
-.landscape .work{
-  height:220px;
-}
-
-/* PORTRAIT (BOTTOM) */
-.portrait .work{
-  height:320px;
-}
-
-/* WORK CARD */
-.work{
-  border-radius:16px;
-  overflow:hidden;
-  background:#111;
-  transition:0.3s;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-
-/* IMAGE */
-.work img{
-  width:100%;
-  height:100%;
-}
-
-/* IMPORTANT DIFFERENCE */
-.landscape img{
-  object-fit:cover;
-}
-
-.portrait img{
-  object-fit:contain;
-  background:#111;
+/* FIX HEIGHT */
+.portfolio-item {
+  height: 220px;
 }
 
 /* HOVER EFFECT */
-.work:hover{
-  transform:scale(1.05);
+.portfolio-item:hover img {
+  transform: scale(1.08);
 }
 
+/* GLOW */
+.portfolio-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+}
 /* ================= RESPONSIVE ================= */
 .video-section {
   padding: 80px 10%;
